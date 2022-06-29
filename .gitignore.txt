@@ -1,2 +1,2 @@
 #this stops git from tracking the API Key pasted in
-.pasteYourMapboxKeyInHere.js
+pasteYourMapboxKeyInHere.js
