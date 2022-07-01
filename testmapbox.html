@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css" rel="stylesheet">
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js"></script>
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content = 'Portfolio for MIT xPro courcse'
+</head>
+<body>
+    
+    <div id="map" style ="width:800; height: 400;"></div>
+
+  <script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoiZ2VvcmdlYmVybmFyZDQiLCJhIjoiY2w0eno0cTdkMHNtejNlcDlyZmozcHFpcyJ9.y9uLmG7mDCmnkTuiCaRBQQ';
+var map = new mapboxgl.Map({
+  container: 'map',
+  style: 'mapbox://styles/mapbox/streets-v11',
+  center: [-71.104081, 42.365554],
+  zoom: 14,
+});
+
+  let blockers = document.getElementsByClassName('mapboxgl-control-container');
+    for( i = 0; i< blockers.length ; i++){
+      let blocker = blockers[i]
+      blocker.remove();
+    } 
+      
+  //let textLeft = document.get
+  // blocker.classList.add( hidden)
+
+  // let blocker2 = document.getElementsByClassName('mapboxgl-ctrl-attrib')[0];
+  // blocker2.classlist.add(hidden);
+  
+  </script>
+  <style>
+
+    div {
+    height: 200px;
+    width: 400px;
+    background: black;
+
+    /* position: fixed; */
+    top: 50%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -200px;
+    }
+    
+    .mapbox-improve-map {
+    display: none;
+}
+  </style>
+</body>
+</html>

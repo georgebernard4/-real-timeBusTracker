@@ -1,33 +1,131 @@
+<!-- pk.eyJ1IjoiZ2VvcmdlYmVybmFyZDQiLCJhIjoiY2w1MXZ6MzFjMDlzaTNwbjhhZGQ0Y3IwYiJ9.lS363nl8aKRIjaNAwz4mdg -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<header>
-
+    <!-- <script> let mapboxgl.accessToken = 'pk.eyJ1IjoiZ2VvcmdlYmVybmFyZDQiLCJhIjoiY2w1MXZ6MzFjMDlzaTNwbjhhZGQ0Y3IwYiJ9.lS363nl8aKRIjaNAwz4mdg' </script> -->
 		<meta charset="utf-8" />
-		<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
-
-<script>apboxgl.accessToken = pk.eyJ1IjoiZ2VvcmdlYmVybmFyZDQiLCJhIjoiY2w0emd0d2E0MzF5azNkczh4MzBoNmV1YiJ9.hsvfLiYcLslymRbHHiQG9Q;</script>	
-
-<script src="https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.js"></script>
-<link href="https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.css" rel="stylesheet" />
-<link href="busTracker.css"  rel="stylesheet" >
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content = 'Portfolio for MIT xPro courcse'>
+    <link href="busTracker.css"  rel="stylesheet" >
 		
-		<script id="replace_with_navbar" src="nav.js"></script>
-</header>
-<body>
-	<title>Real-Time Bus Tracker</title>
+<!-- loading font roboto Slab -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-	  <div id="Map" style='z-index: 5'></div>
-		<!-- /getting key from js file -->
-		<script src="bus.js";></script>
-		<container id="Map" ></container>
+<nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+  <div><a class="navbar-brand sm-px-1"  style="font-family: robotoSlab, serif" href="https://georgebernard4.github.io/">george bernard.io</a></div>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link " aria-current="page" style="font-family: robotoSlab, serif"   href="#">Welcome!</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">About me...</a>
+      </li>
+      <li class="nav-item dropdown">
+        <div class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
+          Work Examples<span class="caret"></span>
+        </div>
+        <ul class="dropdown-menu dropdown-menu-primary" aria-labelledby="navbarDropdown">
+          
+          <li><a class="dropdown-item" href="#">webpages</a></li>
+          <li><a class="dropdown-item" href="https://georgebernard4.github.io/pacman/"> &nbsp;&nbsp;&#x2022; pacman</a></li>
+          <li><a class="dropdown-item text-primary font-italic text-bolder" href="https://georgebernard4.github.io/realtimeBusTracker/">  &nbsp;&nbsp;&#x2022; <em1>bustracker</em1></a></li>
+          <li><a class="dropdown-item " href="https://georgebernard4.github.io/eyes/">&nbsp;&nbsp;&#x2022; eyes</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="https://github.com/georgebernard4?tab=repositories">repos</a></li>
+          <li><a class="dropdown-item" href="https://github.com/georgebernard4/pacman">&nbsp;&nbsp;&#x2022; pacman</a></li>
+          <li><a class="dropdown-item" href="https://github.com/georgebernard4/realtimeBusTracker">&nbsp;&nbsp;&#x2022; bustracker</a></li>
+          <li><a class="dropdown-item" href="https://github.com/georgebernard4/eyes">&nbsp;&nbsp;&#x2022; eyes</a></li>
+          <li><a class="dropdown-item" href="https://github.com/georgebernard4?tab=repositories">&nbsp;&nbsp;&#x2022; all</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " data-bs-toggle="offcanvas-end" href="#Contact" role="button" aria-controls="contact">Contact =></a>
+      </li>
+    </ul>
+  </div>
+</nav>
 
-	<p>
-		Go to mapbox.com and get your own API code and paste it here.
-		h1>The button type attribute</h1>
 
-		<form action="move()" method="get">
-			<label for="token">enter API key here</label>
-			<input type="text" id="token" name="pk..."><br><br>
-			<button type="submit" value="Submit">Submit</button>
-			<button type="reset" value="Reset">Reset</button>
-		</form>
+ 
+ 
+ 
+  <div class="offcanvas offcanvas-start show" tabindex="-1" id="MapboxKeyEntry" aria-labelledby="MapboxKeyEntry">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel2">Mapbox Key</h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="closed"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div>
+        <ul>
+          <h5>jl;kj;lkj;lkj</h5>
+          <h5>phone: 707-849-3443</h5>
+          <h5>Linkedin</h5>
+          <h5>Facebook</h5>
+          
+          <span>
+            Go to mapbox.com
+            <br>
+            Get your own API key 
+            &nbsp&nbspyou'll need to enter a credit card if this concerns you see extra info below
+            <br>
+            Paste API key here:
+            <br>
+            <input type="text" id="token">
+            <button id="tokenSubmit" >Use Key</button>
+            <br>
+            Key should look like:
+            <br>
+            pk.lKjJmqfPCVls30qrlv6v3xmIWKxT8RKbThGZMZ4oOcsNigQU69W2f8v6d4YBH8X3mEQw8k3I-YJX6UCr67hjuhuZMa29
+          </span>
+         
+                  
+                  <div class="offcanvas offcanvas-end" tabindex="-1" id="Contact" aria-labelledby="Contact">
+                    <div class="offcanvas offcanvas-start show" tabindex="-1" id="MapboxKeyEntry" aria-labelledby="MapboxKeyEntry"></div>
+                    <div class="offcanvas-header">
+                      <h5 class="offcanvas-title" id="offcanvasExampleLabel">Contact George</h5>
+                      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="closed"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                      <div>
+                        <ul>
+                          <h5>email: georgebernard4@gmail.com</h5>
+                          <h5>phone: 707-849-3443</h5>
+                          <h5>Linkedin</h5>
+                          <h5>Facebook</h5>
+                          
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                           
+                  
+        
+         
+          
+          
+        
+             
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        </header>
+        <body>
+          <title>Real-Time Bus Tracker</title>
+          
+          <li class="nav-item">
+            <a class="nav-link " data-bs-toggle="offcanvas" href="#Contact" role="button" aria-controls="contact"></a>
+          </li>
+          
+          
+          <div id = map></div>
+          
+          
+          <!-- /getting key from js file -->
+          <script src="pasteYourMapboxKeyInHere.js"></script>
+          <script src="bus.js";></script>
+          </html>
