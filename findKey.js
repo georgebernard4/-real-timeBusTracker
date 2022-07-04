@@ -43,7 +43,7 @@ function keyCheck(location, ignore = false){
   let mapsource = defultMapImg; 
   if( keyValid){
     
-    let targetPage = 'hashisKey.html';
+    let targetPage = 'https://georgebernard4.github.io/inRealTimeBusTracker/';
     let targetURL = targetPage + '#' + keyX;
     mapsource = targetURL;
     let keyclosebutton = document.getElementById('closeKey');
