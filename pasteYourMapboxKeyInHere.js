@@ -13,7 +13,7 @@
 //remove their access to your credit card here: 
                          
   let MapboxKeyXX = 'copy key here'; 
-  MapboxKeyXX = 'pk.eyJ1IjoiZ2VvcmdlYmVybmFyZDQiLCJhIjoiY2w1MXZ6MzFjMDlzaTNwbjhhZGQ0Y3IwYiJ9.lS363nl8aKRIjaNAwz4mdg'   
+  MapboxKeyXX = '';  
  //Your key should look similar to commented-out key
 //let MapboxKeyXX = pk.lKjJmqfPCVls30qrlv6v3xmIWKxT8RKbThGZMZ4oOcsNigQU69W2f8v6d4YBH8X3mEQw8k3I-YJX6UCr67hjuhuZMa29'
 //Note: commented out key randomly generated with the help of https://www.hjkeen.net/htoys/generate.htm

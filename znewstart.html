@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>bus tracker live</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="busTracker.css">
+  <style>
+    .noextra {margin: 0px; padding: 0px}
+  </style>
+  </head>
+  <body>
+    <!-- ------------------------------------------NavBar ---------------------------------------------------->
+    <nav class="navbar navbar-expand-sm navbar-dark bg-primary map-overlay" style="z-index: 2;">
+      <div class="container-fluid">
+        <div><a class="navbar-brand sm-px-1"  style="font-family: robotoSlab, serif" href="https://georgebernard4.github.io/">george bernard.io</a></div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link " aria-current="page" style="font-family: robotoSlab, serif"   href="#">Welcome!</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About me...</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Dropdown
+              </a>
+              <ul class="dropdown-menu map-overlay" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">webpages</a></li>
+            <li><a class="dropdown-item" href="https://georgebernard4.github.io/pacman/"> &nbsp;&nbsp;&#x2022; pacman</a></li>
+            <li><a class="dropdown-item" href="https://georgebernard4.github.io/realtimeBusTracker/">  &nbsp;&nbsp;&#x2022; bustracker</a></li>
+            <li><a class="dropdown-item text-primary font-italic text-bolder" href="https://georgebernard4.github.io/eyes/">&nbsp;&nbsp;&#x2022; <em1>eyes</em1></a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="https://github.com/georgebernard4?tab=repositories">repos</a></li>
+            <li><a class="dropdown-item" href="https://github.com/georgebernard4/pacman">&nbsp;&nbsp;&#x2022; pacman</a></li>
+            <li><a class="dropdown-item" href="https://github.com/georgebernard4/realtimeBusTracker">&nbsp;&nbsp;&#x2022; bustracker</a></li>
+            <li><a class="dropdown-item" href="https://github.com/georgebernard4/eyes">&nbsp;&nbsp;&#x2022; eyes</a></li>
+            <li><a class="dropdown-item" href="https://github.com/georgebernard4?tab=repositories">&nbsp;&nbsp;&#x2022; all</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class=" nav-link" data-bs-toggle="offcanvas" href="#offcanvasContacts" role="button" aria-controls="offcanvasContacts">
+                Contact
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class=" nav-link" data-bs-toggle="offcanvas" href="#offcanvasKey" role="button" aria-controls="offcanvasKey">
+                Key Entry
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+    <!-- -----------------NavBar End--------------------------------->
+    <!-- --------------- Contacts off Canvas ------------------------>
+    
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasContacts" aria-labelledby="offcanvasContactsLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasContactsLabel">Contact George ...</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <div>
+          <h5>email: georgebernard4@gmail.com</h5>
+          <h5>phone: 707-849-3443</h5>
+          <h5>Linkedin</h5>
+          <h5>Facebook</h5>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- --------------- Contacts off Canvas ------------------------>
+    <!-- ----------------------  Key input -------------------------->
+    <div class="offcanvas offcanvas-start show" tabindex="-1" id="offcanvasKey" aria-labelledby="offcanvasKeyLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasKeyLabel">Mapbox.com API Key Entry</h5>
+        <button id='closeKey'  type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <span>
+          <a href="https://account.mapbox.com/access-tokens/">Go to Mapbox.com</a>
+          <br>
+          Get your own API key 
+          &nbsp&nbspyou'll need to enter a credit card if this concerns you see extra info below
+          <br>
+          Paste API key here:
+          <br>
+          <input type="text" id="token">
+          <button id="tokenSubmit" >Use Key</button>
+          <br>
+          Key should look like:
+          <br>
+          pk.lKjJmqfPCVls30qrlv6v3xmIWKxT8RKbThGZMZ4oOcsNigQU69W2f8v6d4YBH8X3mEQw8k3I-YJX6UCr67hjuhuZMa29
+        </span> 
+        <div class="accordion" id="accordionKeyInfo">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="GettingAKey">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Getting a Key
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="GettingAKey" data-bs-parent="#accordionExample">
+              <div class="accordion-body noextra">
+                <ol class="noextra">
+                  <li><p><a href="https://account.mapbox.com/auth/signup/" rel="noopener noreferrer"> Click to sign up for Mapbox.com </a>
+                     or <br>
+                     <a href="https://account.mapbox.com/auth/signin"target="_blank" rel="noopener noreferrer"> Sign in to Mapbox.com </a>
+                     or <br>
+                     <a href="https://account.mapbox.com/access-tokens/" target="_blank" rel="noopener noreferrer">skip this if you have automatic login </p>
+                  </li>
+                  <li>
+                    <p><a href="https://account.mapbox.com/access-tokens/" target="_blank" rel="noopener noreferrer">Click Here and Copy Key</a>
+                      <img src="copykey.png"></img>
+                    </li>    
+                  </p>
+                </ol>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="Using the Key">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Places to Paste Key
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="Using the Key" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <ol>
+                  <li>Input Box Above: paste you key above and press the button</li>
+                  <li>Paste into file: <code>pasteYourMapboxKeyInHere.js</code></li>
+                  <li>Hash: add to this page's Url</li>
+                    <ol>
+                      <li>hash tag: <code>#</code> </li>
+                      <li>quote mark: <code>'</code></li>
+                      <li>your key: <code>pk.Osld7kfj4lj...</code></li>
+                      <li>quote mark: <code>'</code></li>
+                      <li></li>
+                    </ol>
+                </ol>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Protecting your key and your credit card
+              </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <p>Be aware the threshold for paying is very high.<br>  You don't have to pay mapbox, till you create over 50,000 maps in a given month.<br>  You will not pay for personal use only.</p></li>
+                <ol>If you still concerned you can:
+                  <li><a target="_blank" rel="noopener noreferrer"href="https://account.mapbox.com/access-tokens/">refreshing key deletes the key you have been using</a></li>
+                  <li><a target="_blank" rel="noopener noreferrer" href="https://account.mapbox.com/settings/billing">remove your credit card from your account, this will stop your key from working</a></li>
+                </ol>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ----------------------  Key input ------------------------>
+  
+  
+  
+  
+
+  <div style="width: 100%;overflow: hidden; height: 100%; ">
+
+    <iframe id="map2" src="" frameborder="10px" style="width: 100%; height: 100vh; z-index: 1; overflow: hidden; position: absolute; top: 0;"></iframe>
+   </div>
+   <script src="pasteYourMapboxKeyInHere.js"></script>
+   <script src="findKey.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    
+  </body>
+  </html>

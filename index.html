@@ -5,7 +5,7 @@
     <!-- <script> let mapboxgl.accessToken = 'pk.eyJ1IjoiZ2VvcmdlYmVybmFyZDQiLCJhIjoiY2w1MXZ6MzFjMDlzaTNwbjhhZGQ0Y3IwYiJ9.lS363nl8aKRIjaNAwz4mdg' </script> -->
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="description" content = 'Portfolio for MIT xPro courcse'>
+		<meta name="description" content = 'MBTA bustracker live'>
     <link href="busTracker.css"  rel="stylesheet" >
 		
 <!-- loading font roboto Slab -->
@@ -28,9 +28,9 @@
         <a class="nav-link" href="#">About me...</a>
       </li>
       <li class="nav-item dropdown">
-        <div class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
+        <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
           Work Examples<span class="caret"></span>
-        </div>
+        </a>
         <ul class="dropdown-menu dropdown-menu-primary" aria-labelledby="navbarDropdown">
           
           <li><a class="dropdown-item" href="#">webpages</a></li>
@@ -46,73 +46,85 @@
         </ul>
       </li>
       <li class="nav-item">
-        <a class="nav-link " data-bs-toggle="offcanvas-end" href="#Contact" role="button" aria-controls="contact">Contact =></a>
+        <a class="nav-link " data-bs-toggle="offcanvas" href="#Contact" role="button" aria-controls="contact">Contact =></a>
       </li>
     </ul>
   </div>
 </nav>
 
-
- 
- 
- 
-  <div class="offcanvas offcanvas-start show" tabindex="-1" id="MapboxKeyEntry" aria-labelledby="MapboxKeyEntry">
-    <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="offcanvasExampleLabel2">Mapbox Key</h5>
-      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="closed"></button>
+<div class="offcanvas offcanvas-start show" data-bs-backdrop="static" tabindex="-1" id="KeyEntry" aria-labelledby="staticBackdropLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="staticBackdropLabel">Enter API Key</h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div>
+      <ul>
+        <h5>jl;kj;lkj;lkj</h5>
+        <h5>phone: 707-849-3443</h5>
+        <h5>Linkedin</h5>
+        <h5>Facebook</h5>
+        
+        <span>
+          Go to mapbox.com
+          <br>
+          Get your own API key 
+          &nbsp&nbspyou'll need to enter a credit card if this concerns you see extra info below
+          <br>
+          Paste API key here:
+          <br>
+          <input type="text" id="token">
+          <button id="tokenSubmit" >Use Key</button>
+          <br>
+          Key should look like:
+          <br>
+          pk.lKjJmqfPCVls30qrlv6v3xmIWKxT8RKbThGZMZ4oOcsNigQU69W2f8v6d4YBH8X3mEQw8k3I-YJX6UCr67hjuhuZMa29
+        </span> 
+      </ul>
     </div>
-    <div class="offcanvas-body">
-      <div>
-        <ul>
-          <h5>jl;kj;lkj;lkj</h5>
-          <h5>phone: 707-849-3443</h5>
-          <h5>Linkedin</h5>
-          <h5>Facebook</h5>
-          
-          <span>
-            Go to mapbox.com
-            <br>
-            Get your own API key 
-            &nbsp&nbspyou'll need to enter a credit card if this concerns you see extra info below
-            <br>
-            Paste API key here:
-            <br>
-            <input type="text" id="token">
-            <button id="tokenSubmit" >Use Key</button>
-            <br>
-            Key should look like:
-            <br>
-            pk.lKjJmqfPCVls30qrlv6v3xmIWKxT8RKbThGZMZ4oOcsNigQU69W2f8v6d4YBH8X3mEQw8k3I-YJX6UCr67hjuhuZMa29
-          </span>
-         
-                  
-                  <div class="offcanvas offcanvas-end" tabindex="-1" id="Contact" aria-labelledby="Contact">
-                    <div class="offcanvas offcanvas-start show" tabindex="-1" id="MapboxKeyEntry" aria-labelledby="MapboxKeyEntry"></div>
-                    <div class="offcanvas-header">
-                      <h5 class="offcanvas-title" id="offcanvasExampleLabel">Contact George</h5>
-                      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="closed"></button>
-                    </div>
-                    <div class="offcanvas-body">
-                      <div>
-                        <ul>
-                          <h5>email: georgebernard4@gmail.com</h5>
-                          <h5>phone: 707-849-3443</h5>
-                          <h5>Linkedin</h5>
-                          <h5>Facebook</h5>
-                          
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                           
-                  
-        
-         
-          
-          
-        
-             
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </div>
+</div>
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="Contact" aria-labelledby="Contact">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Contact George</h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div>
+      <ul>
+        <h5>email: georgebernard4@gmail.com</h5>
+        <h5>phone: 707-849-3443</h5>
+        <h5>Linkedin</h5>
+            <h5>Facebook</h5>
+            
+      </ul>
+    </div>
+  </div>
+</div>
+<style>
+  .navbar-brand, .navbar-nav > li {
+    margin-left:30px;
+    margin-right:30px;}
+    /* .navbar-nav.open.dropdown-menu {
+    background-color: blue;
+  }   */
+  /* .frontLetter{
+    font-style:italic;
+    font: size 1.3em;
+  } */
+  /* .roboto {font-family: 'Roboto', sans-serif;}
+  .robotoSlab{font-family: 'Roboto Slab', serif;} */
+
+
+ .italic {font-style: italic}
+ /* attributes to add to dropdown active */
+ /* text-primary italic text-bolder */
+
+  
+</style>                         
+                   
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
         </header>
         <body>
           <title>Real-Time Bus Tracker</title>
@@ -128,4 +140,4 @@
           <!-- /getting key from js file -->
           <script src="pasteYourMapboxKeyInHere.js"></script>
           <script src="bus.js";></script>
-          </html>
+        

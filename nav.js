@@ -12,4 +12,3 @@ fetch('nav.html')
     newelem.innerHTML = text;
     oldelem.parentNode.replaceChild(newelem,oldelem);
 })
-
