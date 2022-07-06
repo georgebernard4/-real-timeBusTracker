@@ -1,5 +1,5 @@
 #Bus Tracker Live
-<img src="busTrackerView.png"/>
+<img src="busTrackerView.png" />
 ##Click here to see[https://georgebernard4.github.io/realtimeBusTracker/]
 ##Skills Shown: Integrating multiple API's, asynchornous programming, JS, CSS, Bootstrap
 ##Description
